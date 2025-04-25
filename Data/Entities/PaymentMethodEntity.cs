@@ -2,7 +2,7 @@
 
 namespace Data.Entities;
 
-public class PaymentMethod
+public class PaymentMethodEntity
 {
     [Key]
     public int Id { get; set; }
@@ -10,4 +10,6 @@ public class PaymentMethod
     [Required]
     [MaxLength(50)]
     public string MethodName { get; set; } = null!;
+
+    public ICollection<PaymentControlEntity> PaymentControls { get; set; } = [];
 }

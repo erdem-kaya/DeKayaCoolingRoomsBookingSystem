@@ -2,7 +2,7 @@
 
 namespace Data.Entities;
 
-public class PaymentStatus
+public class PaymentStatusEntity
 {
     [Key]
     public int Id { get; set; }
@@ -10,4 +10,6 @@ public class PaymentStatus
     [Required]
     [MaxLength(50)]
     public string StatusName { get; set; } = null!;
+
+    public ICollection<PaymentControlEntity> PaymentControls { get; set; } = [];
 }

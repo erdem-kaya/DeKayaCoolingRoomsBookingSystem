@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities;
 
-public class PaymentControl
+public class PaymentControlEntity
 {
     [Key]
     public int Id { get; set; }
@@ -23,8 +23,10 @@ public class PaymentControl
     public DateTime ConfirmedAt { get; set; }
     
     public int PaymentStatusId { get; set; }
-    public PaymentStatus PaymentStatus { get; set; } = null!;
+    public PaymentStatusEntity PaymentStatus { get; set; } = null!;
 
     public int PaymentMethodId { get; set; }
-    public PaymentMethod PaymentMethod { get; set; } = null!;
+    public PaymentMethodEntity PaymentMethod { get; set; } = null!;
+    public ICollection<BookingEntity> Bookings { get; set; } = [];
+
 }

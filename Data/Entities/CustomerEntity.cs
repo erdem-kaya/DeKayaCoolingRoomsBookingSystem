@@ -2,7 +2,7 @@
 
 namespace Data.Entities;
 
-public class Customer
+public class CustomerEntity
 {
     [Key]
     public int Id { get; set; }
@@ -15,5 +15,5 @@ public class Customer
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
-    public ICollection<Booking> Bookings { get; set; } = [];
+    public ICollection<BookingEntity> Bookings { get; set; } = [];
 }

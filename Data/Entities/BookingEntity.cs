@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities;
 
-public class Booking
+public class BookingEntity
 {
     [Key]
     public int Id { get; set; }
@@ -19,15 +19,15 @@ public class Booking
     public decimal Discount { get; set; }
     public string? BookingDescription { get; set; }
 
-    public Customer Customer { get; set; } = null!;
+    public CustomerEntity Customer { get; set; } = null!;
     public int CustomerId { get; set; }
 
-    public CoolingRoom CoolingRoom { get; set; } = null!;
+    public CoolingRoomEntity CoolingRoom { get; set; } = null!;
     public int CoolingRoomId { get; set; }
 
-    public PaymentControl PaymentControl { get; set; } = null!;
+    public PaymentControlEntity PaymentControl { get; set; } = null!;
     public int PaymentControlId { get; set; }
 
-    public ApplicationUser ApplicationUser { get; set; } = null!;
+    public ApplicationUserEntity ApplicationUser { get; set; } = null!;
     public string ApplicationUserId { get; set; } = null!;
 }

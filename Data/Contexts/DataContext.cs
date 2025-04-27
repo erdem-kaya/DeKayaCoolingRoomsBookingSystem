@@ -14,6 +14,7 @@ public class DataContext(DbContextOptions<DataContext> options) : IdentityDbCont
     public virtual DbSet<PaymentControlEntity> PaymentControls { get; set; }
     public virtual DbSet<PaymentStatusEntity> PaymentStatuses { get; set; }
     public virtual DbSet<PaymentMethodEntity> PaymentMethods { get; set; }
+    public virtual DbSet<UserProfileEntity> UserProfiles { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -21,9 +22,9 @@ public class DataContext(DbContextOptions<DataContext> options) : IdentityDbCont
 
         // ApplicationUserEntity - BookingEntity (1-to-many)
         builder.Entity<BookingEntity>()
-            .HasOne(b => b.ApplicationUser)
+            .HasOne(b => b.UserProfile)
             .WithMany(u => u.Bookings)
-            .HasForeignKey(b => b.ApplicationUserId)
+            .HasForeignKey(b => b.UserProfileId)
             .OnDelete(DeleteBehavior.Restrict);
 
         // CustomerEntity - BookingEntity (1-to-many)

@@ -13,5 +13,5 @@ public class Booking
     public Customer Customer { get; set; } = null!;
     public CoolingRoom CoolingRoom { get; set; } = null!;
     public PaymentControl PaymentControl { get; set; } = null!;
-    public ApplicationUser ApplicationUser { get; set; } = null!;
+    public UserProfile ApplicationUser { get; set; } = null!;
 }

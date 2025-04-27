@@ -28,6 +28,6 @@ public class BookingEntity
     public PaymentControlEntity PaymentControl { get; set; } = null!;
     public int PaymentControlId { get; set; }
 
-    public ApplicationUserEntity ApplicationUser { get; set; } = null!;
-    public string ApplicationUserId { get; set; } = null!;
+    public UserProfileEntity UserProfile { get; set; } = null!;
+    public string UserProfileId { get; set; } = null!;
 }

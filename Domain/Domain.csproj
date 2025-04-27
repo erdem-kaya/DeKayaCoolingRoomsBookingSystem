@@ -6,12 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\ApplicationUserData\" />
-    <Folder Include="Models\BookingData\" />
-    <Folder Include="Models\CoolingRoomData\" />
-    <Folder Include="Models\CustomerData\" />
-    <Folder Include="Models\PaymentControlData\" />
-  </ItemGroup>
-
 </Project>

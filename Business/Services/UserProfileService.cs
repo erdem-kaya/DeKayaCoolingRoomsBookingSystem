@@ -1,4 +1,5 @@
 ﻿using Business.Factories;
+using Business.Interfaces;
 using Business.Model;
 using Data.Entities;
 using Data.Interfaces;
@@ -8,11 +9,10 @@ using Domain.Models.UserProfileData;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
-using System.Linq.Expressions;
 
 namespace Business.Services;
 
-public class UserProfileService(IUserProfileRepository userProfileRepository, UserManager<ApplicationUserEntity> userManager, RoleManager<IdentityRole> roleManager)
+public class UserProfileService(IUserProfileRepository userProfileRepository, UserManager<ApplicationUserEntity> userManager, RoleManager<IdentityRole> roleManager) : IUserProfileService
 {
     private readonly IUserProfileRepository _userProfileRepository = userProfileRepository;
     private readonly UserManager<ApplicationUserEntity> _userManager = userManager;
@@ -197,9 +197,9 @@ public class UserProfileService(IUserProfileRepository userProfileRepository, Us
 
             var deleteAppUserResult = await _userManager.DeleteAsync(appUser);
             var deleteUserProfileResult = await _userProfileRepository.DeleteAsync(userProfileEntity);
-            
 
-            if(!deleteUserProfileResult.Succeeded || !deleteAppUserResult.Succeeded)
+
+            if (!deleteUserProfileResult.Succeeded || !deleteAppUserResult.Succeeded)
             {
                 await _userProfileRepository.RollbackTransactionAsync();
                 return new UserResult { Succeeded = false, StatusCode = 500, Error = "Unable to delete user" };
@@ -228,9 +228,9 @@ public class UserProfileService(IUserProfileRepository userProfileRepository, Us
             return new UserResult { Succeeded = false, StatusCode = 404, Error = "User not found" };
 
         var result = await _userManager.AddToRoleAsync(user, roleName);
-            return result.Succeeded
-                ? new UserResult { Succeeded = true, StatusCode = 200 }
-                : new UserResult { Succeeded = false, StatusCode = 500, Error = "Unable to add user to role" };
+        return result.Succeeded
+            ? new UserResult { Succeeded = true, StatusCode = 200 }
+            : new UserResult { Succeeded = false, StatusCode = 500, Error = "Unable to add user to role" };
     }
 
 }

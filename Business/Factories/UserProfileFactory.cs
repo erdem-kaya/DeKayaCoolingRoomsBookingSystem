@@ -29,8 +29,20 @@ public class UserProfileFactory
         return (appUser, userProfile);
     }
 
-    public static void UpdateEntity(UserProfileEntity entity, UserProfileUpdateForm model)
+    public static UserProfile ModelOverload(ApplicationUserEntity appUser, UserProfile userProfile)
     {
+        userProfile.Email = appUser.Email!;
+        return userProfile;
+    }
+
+    public static void UpdateEntity(ApplicationUserEntity appUser, UserProfileEntity entity, UserProfileUpdateForm model)
+    {
+        if (!string.IsNullOrWhiteSpace(model.Email))
+        {
+            appUser.Email = model.Email;
+            appUser.UserName = model.Email;
+        }
+
         if (model.FirstName != null)
         {
             entity.FirstName = model.FirstName;
@@ -40,11 +52,6 @@ public class UserProfileFactory
         {
             entity.LastName = model.LastName;
         }
-        if (model.Email != null)
-        {
-            entity.ApplicationUser.Email = model.Email;
-        }
-
         if (model.JobTitle != null)
         {
             entity.JobTitle = model.JobTitle;

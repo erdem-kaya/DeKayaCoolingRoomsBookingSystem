@@ -1,6 +1,5 @@
-﻿namespace Domain.Models.Auth
+﻿namespace Domain.Models.Auth;
+
+public class SignInFormData
 {
-    internal class SignInFormData
-    {
-    }
 }

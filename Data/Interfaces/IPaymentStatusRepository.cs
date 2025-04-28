@@ -6,3 +6,4 @@ namespace Data.Interfaces;
 public interface IPaymentStatusRepository : IBaseRepository<PaymentStatusEntity, PaymentStatus>
 {
 }
+

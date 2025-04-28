@@ -1,6 +1,7 @@
 ﻿using Data.Entities;
 using Domain.Extensions;
 using Domain.Models;
+using Domain.Models.UserProfileData;
 
 namespace Business.Factories;
 
@@ -15,4 +16,44 @@ public class UserProfileFactory
     {
         return model.MapTo<UserProfileEntity>();
     }
+
+    public static (ApplicationUserEntity appUser, UserProfileEntity userProfile) Create(UserProfileRegistrationForm form)
+    {
+        var appUser = form.MapTo<ApplicationUserEntity>();
+        appUser.Email = form.Email;
+        appUser.UserName = form.Email;
+
+        var userProfile = form.MapTo<UserProfileEntity>();
+        userProfile.Id = appUser.Id;
+
+        return (appUser, userProfile);
+    }
+
+    public static void UpdateEntity(UserProfileEntity entity, UserProfileUpdateForm model)
+    {
+        if (model.FirstName != null)
+        {
+            entity.FirstName = model.FirstName;
+        }
+
+        if (model.LastName != null)
+        {
+            entity.LastName = model.LastName;
+        }
+        if (model.Email != null)
+        {
+            entity.ApplicationUser.Email = model.Email;
+        }
+
+        if (model.JobTitle != null)
+        {
+            entity.JobTitle = model.JobTitle;
+        }
+
+        if (model.ProfilePicture != null)
+        {
+            entity.ProfilePicture = model.ProfilePicture;
+        }
+    }
+
 }

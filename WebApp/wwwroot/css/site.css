@@ -144,6 +144,13 @@ h6, .h6 {
     font-size: 1.125rem;
 }
 
+.wrapper-centerscreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+}
+
 .wrapper-portal {
     display: grid;
     grid-template-columns: auto 1fr;

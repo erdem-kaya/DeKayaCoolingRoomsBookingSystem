@@ -216,7 +216,6 @@ public class UserProfileService(IUserProfileRepository userProfileRepository, Us
         }
     }
 
-
     //Help Class
     public async Task<UserResult> AddToUserRoleAsync(string userId, string roleName)
     {

@@ -1,0 +1,413 @@
+﻿/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --font-standart: "Nunito", sans-serif;
+    --font-logo: "Comfortaa", sans-serif;
+    --font-fa-6: "Font Awesome 6 Pro";
+    /* font-weight */
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    --font-black: 900;
+    /* colors */
+    --transparent: transparent;
+    /* blue-color */
+    --blue-light-opacity: rgba(45, 125, 204, 0.10);
+    --blue-light: #DBEDFF;
+    --blue-semilight: #9DCEFF;
+    --blue: #2D99FF;
+    --blue-dark: #2D7DCC;
+    --blue-light-10: rgba(45, 125, 204, 0.10);
+    /* green-color */
+    --green-light: #D8FFDF;
+    --green-semilight: #B3FFCO;
+    --green: #119B56;
+    --green-dark: #187848;
+    /* yellow-color */
+    --yellow-light: #FFF6C7;
+    --yellow-dark-light: #faeca2;
+    --yellow-semilight: #FFF3B4;
+    --yellow: #EFDF49;
+    --yellow-dark: #8B7400;
+    /* red-color */
+    --red-light: #ffb0b0;
+    --red-semilight: #FFB8A5;
+    --red: #FF6640;
+    --red-dark: #B83030;
+    /* white-color */
+    --white: #FFFFFF;
+    --white-100: #FFFFFF;
+    --white-200: #F5F7FA;
+    --white-300: #F1F3F7;
+    --white-400: #F0F1F5;
+    /* gray-color */
+    --gray-100: #E8EAED;
+    --gray-200: #EBEEF2;
+    --gray-300: #E3E5E8;
+    --gray-400: #E8E8E8;
+    --gray-500: #DEDEDE;
+    --gray-600: #C6C8CC;
+    --gray-700: #9E9E9E;
+    --gray-800: #637085;
+    --gray-transparent: rgba(160, 160, 160, 0.40);
+    /* dark-color */
+    --dark-100: #1A1926;
+    --dark-200: #1C1D1F;
+    --dark-300: #202123;
+    --dark-400: #28263B;
+    --dark-500: #333333;
+    --dark-600: #38383B;
+    --dark-opacity-20: rgba(26, 25, 38, 0.2);
+    --dark-opacity-60: rgba(26, 25, 38, 0.6);
+    /* text-color */
+    --text-color: var(--dark-400);
+    --text-muted-color: var(--gray-800);
+    --text-extra-muted-color: var(--gray-700);
+    --text-headline-color: var(--dark-100);
+    /* background-color */
+    --background-color: var(--white-300);
+    --content-background-color: var(--white-100);
+    --sidebar-background-color: var(--white-100);
+    --orseperator-backgroud-color: var(--white-100);
+    /* border-color */
+    --border-color: var(--gray-500);
+    --border-focus-color: var(--blue-semilight);
+    /* navlinks-color */
+    --navlink-text-color: var(--dark-200);
+    --navlink-text-hover-color: var(--blue);
+    --navlink-text-active-color: var(--blue);
+    --navlink-background-color: #transparent;
+    --navlink-background-hover-color: var(--blue-light);
+    --navlink-background-active-color: var(--blue-light-opacity);
+    /*buttons color*/
+    --btn-account-text-color: var(--dark-400);
+    --btn-account-border-color: var(--transparent);
+    --btn-account-background-color: var(--transparent);
+    --btn-notification-text-color: var(--dark-400);
+    --btn-notification-text-hover-color: var(--dark-400);
+    --btn-notification-background-color: var(--transparent);
+    --btn-notification-background-hover-color: var(--blue-light-opacity);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--font-standart);
+    font-style: normal;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--font-standart);
+    margin: 0;
+    padding: 0;
+}
+
+h1, .h1 {
+    font-size: 2.25rem;
+}
+
+h2, .h2 {
+    font-size: 2rem;
+    color: var(--dark-100)
+}
+
+h3, .h3 {
+    font-size: 1.75rem;
+}
+
+h4, .h4 {
+    font-size: 1.5rem;
+}
+
+h5, .h5 {
+    font-size: 1.25rem;
+}
+
+h6, .h6 {
+    font-size: 1.125rem;
+}
+
+.wrapper-portal {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: minmax(auto, auto) 1fr;
+    grid-template-areas: "sidebar header"
+        "sidebar main";
+    height: 100dvh;
+}
+
+header,
+.header {
+    grid-area: header;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 2rem;
+}
+
+aside,
+.aside {
+    grid-area: sidebar;
+    border-right: 1px solid var(--border-color);
+    padding: 1.5rem 1rem;
+    width: 270px;
+}
+
+main,
+.main {
+    grid-area: main;
+    padding: 1rem 2rem;
+}
+
+/*Buttons*/
+
+.btn-account {
+    transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, color 0.1s ease-in-out;
+    background-color: var(--btn-account-background-color);
+    border: 2px solid var(--btn-account-border-color);
+    color: var(--btn-account-text-color);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    position: relative;
+    cursor: pointer;
+}
+
+    .btn-account img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 40px;
+        width: 40px;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+
+.btn-notification {
+    transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, color 0.1s ease-in-out;
+    background-color: var(--btn-notification-background-color);
+    border: 1px solid var(--btn-notification-border-color);
+    color: var(--btn-notification-text-color);
+    font-size: 1.4em;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+    height: 40px;
+}
+
+    .btn-notification .dot {
+        position: absolute;
+        right: 3px;
+        top: 4px;
+        z-index: 1;
+    }
+
+.link-logotype {
+    width: 90%;
+    height: auto;
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+    font-size: 0.8em;
+    color: #9a9a9b;
+}
+
+.link-logotype img {
+    
+    width: 100%;
+    height: 100%;
+}
+
+.link-logotype span {
+    background-color: var(--gray-700);
+    color: var(--dark-200);
+    font-size: 0.8em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 13px;
+}
+
+nav {
+    cursor: pointer;
+}
+
+.nav-links {
+    margin-top: 3rem;
+    display: grid;
+    gap: 1rem;
+}
+
+    .nav-links .nav-link {
+        font-size: 1em;
+        font-family: var(--font-standart);
+        font-weight: 600;
+        color: var(--navlink-text-color);
+        background-color: var(--navlink-background-color);
+        border-radius: 1rem;
+        padding: 0.7rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+        .nav-links .nav-link.active {
+            color: var(--navlink-text-active-color);
+            background-color: var(--navlink-background-active-color);
+        }
+
+        .nav-links .nav-link:hover {
+            color: var(--navlink-text-hover-color);
+            background-color: var(--navlink-background-hover-color);
+        }
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+
+
+/* ------------------------- */
+/* Responsive Settings */
+/* ------------------------- */
+
+@media (min-width: 1200px) {
+    .wrapper-portal {
+        grid-template-columns: 270px 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "sidebar header"
+            "sidebar main";
+        height: 100dvh;
+    }
+
+    aside,
+    .aside {
+        width: 270px;
+        padding: 2rem 1rem;
+    }
+
+    main,
+    .main {
+        padding: 2rem;
+    }
+
+    header,
+    .header {
+        padding: 1rem 3rem;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+    .wrapper-portal {
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "sidebar header"
+            "sidebar main";
+        height: 100dvh;
+    }
+
+    aside,
+    .aside {
+        width: 200px;
+        padding: 1.5rem 1rem;
+    }
+
+    main,
+    .main {
+        padding: 1.5rem 2rem;
+    }
+
+    header,
+    .header {
+        padding: 1.5rem 2rem;
+    }
+
+    .nav-links {
+        margin-top: 2rem;
+        gap: 0.8rem;
+    }
+
+    .nav-link {
+        font-size: 0.9em;
+        padding: 0.6rem;
+    }
+
+    .link-logotype {
+        width: 100%;
+        font-size: 0.9em;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .wrapper-portal {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main";
+        height: 100dvh;
+    }
+
+    aside,
+    .aside {
+        width: 100%;
+        padding: 1rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    main,
+    .main {
+        padding: 1rem;
+    }
+
+    header,
+    .header {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .nav-links {
+        grid-template-columns: 1fr;
+        margin-top: 1.5rem;
+        gap: 0.7rem;
+    }
+
+    .nav-link {
+        font-size: 0.85em;
+        padding: 0.5rem;
+    }
+
+    .link-logotype {
+        width: 100%;
+        gap: 1rem;
+        font-size: 0.8em;
+    }
+
+        .link-logotype img {
+            width: 60%;
+            height: 100%;
+        }
+}

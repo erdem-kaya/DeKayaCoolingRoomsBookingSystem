@@ -1,0 +1,26 @@
+﻿<nav class="nav-links">
+    <a class="nav-link @(Context.Request.Path == "/" ? "active" : "")" asp-controller="Admin" asp-action="Index">
+        <i class="fa-duotone fa-solid fa-chart-tree-map"></i>
+        <span>Ana Sayfa</span>
+    </a>
+
+    <a class="nav-link" asp-controller="Admin" asp-action="Index">
+        <i class="fa-duotone fa-regular fa-calendar-week"></i>
+        <span>Rezervasyon</span>
+    </a>
+
+    <a class="nav-link" asp-controller="Admin" asp-action="Index">
+        <i class="fa-duotone fa-regular fa-users"></i>
+        <span>Müşteriler</span>
+    </a>
+
+    <a class="nav-link" asp-controller="Admin" asp-action="Index">
+        <i class="fa-duotone fa-solid fa-snowflake"></i>
+        <span>Odaları Yönet</span>
+    </a>
+
+    <a class="nav-link" asp-controller="Admin" asp-action="Index">
+        <i class="fa-duotone fa-regular fa-id-card"></i>
+        <span>Kullanıcılar</span>
+    </a>
+</nav>

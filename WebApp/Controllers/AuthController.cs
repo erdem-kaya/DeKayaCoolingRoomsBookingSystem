@@ -53,6 +53,12 @@ public class AuthController(IAuthService authService) : Controller
         ModelState.AddModelError(string.Empty, "An unknown error occurred.");
         model.ErrorMessages = "An unknown error occurred.";
         return View(model);
+    }
+
+    public async Task<IActionResult> SignOutUser()
+    {
+        await _authService.SignOutAsync();
+        return LocalRedirect("~/");
 
     }
 }
